@@ -1,10 +1,57 @@
 package com.dvlcube.bean;
 
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+@Entity
+@Table(name = "contact")
 public class Contact {
+	@Column(name = "age")
+	private Integer age;
+
+	@Column(name = "birthDate")
+	@Temporal(javax.persistence.TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "ddMMyyyy")
+	private Date birthDate;
+
+	@Column(name = "email")
 	private String email;
+
+	@Column(name = "firstname")
 	private String firstname;
+
+	@Id
+	@Column(name = "id")
+	@GeneratedValue
+	private Integer id;
+
+	@Column(name = "lastname")
 	private String lastname;
+
+	@Column(name = "telephone")
 	private String telephone;
+
+	/**
+	 * @return the age
+	 */
+	public Integer getAge() {
+		return age;
+	}
+
+	/**
+	 * @return the birthDate
+	 */
+	public Date getBirthDate() {
+		return birthDate;
+	}
 
 	/**
 	 * @return the email
@@ -14,14 +61,21 @@ public class Contact {
 	}
 
 	/**
-	 * @return the firstname
+	 * @return the first name
 	 */
 	public String getFirstname() {
 		return firstname;
 	}
 
 	/**
-	 * @return the lastname
+	 * @return the id
+	 */
+	public Integer getId() {
+		return id;
+	}
+
+	/**
+	 * @return the last name
 	 */
 	public String getLastname() {
 		return lastname;
@@ -35,6 +89,22 @@ public class Contact {
 	}
 
 	/**
+	 * @param age
+	 *            the age to set
+	 */
+	public void setAge(final Integer age) {
+		this.age = age;
+	}
+
+	/**
+	 * @param birthDate
+	 *            the birthDate to set
+	 */
+	public void setBirthDate(final Date birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	/**
 	 * @param email
 	 *            the email to set
 	 */
@@ -44,15 +114,23 @@ public class Contact {
 
 	/**
 	 * @param firstname
-	 *            the firstname to set
+	 *            the first name to set
 	 */
 	public void setFirstname(final String firstname) {
 		this.firstname = firstname;
 	}
 
 	/**
+	 * @param id
+	 *            the id to set
+	 */
+	public void setId(final Integer id) {
+		this.id = id;
+	}
+
+	/**
 	 * @param lastname
-	 *            the lastname to set
+	 *            the last name to set
 	 */
 	public void setLastname(final String lastname) {
 		this.lastname = lastname;
