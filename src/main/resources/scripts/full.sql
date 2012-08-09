@@ -9,5 +9,3 @@ CREATE TABLE Contact
     birthDate	datetime,
     created		TIMESTAMP DEFAULT NOW()
 );
-
-alter table contact add column birthDate datetime;

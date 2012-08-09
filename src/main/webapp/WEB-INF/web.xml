@@ -27,6 +27,6 @@
 	</servlet-mapping>
 
 	<welcome-file-list>
-		<welcome-file>list.html</welcome-file>
+		<welcome-file>index</welcome-file>
 	</welcome-file-list>
 </web-app>
