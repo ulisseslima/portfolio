@@ -16,7 +16,6 @@
 		<jackson.version>1.9.9</jackson.version>
 	</properties>
 	<dependencies>
-
 		<dependency>
 			<groupId>org.jboss.spec</groupId>
 			<artifactId>jboss-javaee-6.0</artifactId>
