@@ -9,8 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 @Entity
 @Table(name = "contact")
 public class Contact {
@@ -19,7 +17,6 @@ public class Contact {
 
 	@Column(name = "birthDate")
 	@Temporal(javax.persistence.TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "ddMMyyyy")
 	private Date birthDate;
 
 	@Column(name = "email")

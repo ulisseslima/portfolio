@@ -18,18 +18,18 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	@Transactional
 	public void addContact(final Contact contact) {
-		contactDAO.addContact(contact);
+		contactDAO.create(contact);
 	}
 
 	@Override
 	@Transactional
 	public List<Contact> listContact() {
-		return contactDAO.listContact();
+		return contactDAO.list(Contact.class);
 	}
 
 	@Override
 	@Transactional
 	public void removeContact(final Integer id) {
-		contactDAO.removeContact(id);
+		contactDAO.delete(Contact.class, id);
 	}
 }

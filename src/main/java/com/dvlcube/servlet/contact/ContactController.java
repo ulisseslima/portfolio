@@ -83,6 +83,14 @@ public class ContactController extends CubeServlet {
 		return redirect(ContactMapping.INDEX);
 	}
 
+	@RequestMapping("/demo")
+	public @ResponseBody
+	ContactVO returnJson(@RequestParam final String name, @RequestParam final String email) {
+		// new StringHttpMessageConverter();
+		// converter.canWrite(clazz, mediaType)
+		return new ContactVO(name, email);
+	}
+
 	/**
 	 * @param response
 	 * @throws IOException
