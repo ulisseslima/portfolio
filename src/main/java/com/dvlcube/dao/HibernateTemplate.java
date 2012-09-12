@@ -1,4 +1,4 @@
-package com.dvlcube.portfolio.dao;
+package com.dvlcube.dao;
 
 import java.util.List;
 
@@ -16,6 +16,7 @@ import org.springframework.stereotype.Repository;
  * @since 11/08/2012
  */
 @Repository
+@SuppressWarnings("unchecked")
 public abstract class HibernateTemplate<E> {
 	public class CubeCriteria<T> {
 		private final Criteria criteria;
@@ -51,7 +52,7 @@ public abstract class HibernateTemplate<E> {
 		getSession().save(entity);
 	}
 
-	public boolean delete(final Class<E> entity, final int id) {
+	public boolean delete(final Class<E> entity, final long id) {
 		final E object = (E) getSession().load(entity, id);
 		if (null != object) {
 			getSession().delete(object);
@@ -78,11 +79,11 @@ public abstract class HibernateTemplate<E> {
 		return new CubeCriteria<E>(entity).list();
 	}
 
-	public E retrieve(final Class<E> entity, final int id) {
+	public E retrieve(final Class<E> entity, final long id) {
 		return (E) getSession().load(entity, id);
 	}
 
-	public boolean update(final Class<E> entity, final int id) {
+	public boolean update(final Class<E> entity, final long id) {
 		final E object = (E) getSession().load(entity, id);
 		if (null != object) {
 			getSession().merge(object);

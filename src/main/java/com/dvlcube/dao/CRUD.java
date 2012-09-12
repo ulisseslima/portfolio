@@ -1,4 +1,4 @@
-package com.dvlcube.portfolio.dao;
+package com.dvlcube.dao;
 
 import java.util.List;
 
@@ -9,15 +9,15 @@ import java.util.List;
 public interface CRUD<E> {
 	void create(E entity);
 
-	boolean delete(Class<E> entity, int id);
+	boolean delete(Class<E> entity, long id);
 
 	void delete(E entity);
 
 	List<E> list(Class<E> entity);
 
-	E retrieve(Class<E> entity, int id);
+	E retrieve(Class<E> entity, long id);
 
-	boolean update(Class<E> entity, int id);
+	boolean update(Class<E> entity, long id);
 
 	void update(E entity);
 }

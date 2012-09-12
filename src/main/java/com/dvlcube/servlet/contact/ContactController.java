@@ -98,8 +98,8 @@ public class ContactController extends CubeServlet {
 	 * @since 10/08/2012
 	 */
 	private void write(final HttpServletResponse response, final String string, final Object... args) {
-		try {
-			final String s = new Formatter().format(string, args).toString();
+		try (final Formatter formatter = new Formatter();) {
+			final String s = formatter.format(string, args).toString();
 			response.getWriter().write(s);
 			System.out.println(s);
 		} catch (final IOException e) {

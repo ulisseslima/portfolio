@@ -4,8 +4,7 @@
 <html>
 <head>
 <title>Spring 3 MVC Series - Contact Manager | viralpatel.net</title>
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
 	function getTimeRequest() {
 		$.ajax({
@@ -70,8 +69,7 @@
 				<td><form:input path="birthDate" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit"
-					value="<spring:message code="label.addcontact"/>" /></td>
+				<td colspan="2"><input type="submit" value="<spring:message code="label.addcontact"/>" /></td>
 			</tr>
 		</table>
 	</form:form>
@@ -83,33 +81,28 @@
 		<span id="json"></span>
 	</div>
 
-<div>
-<script type="text/javascript">
-for (var i = 0; i < 5; i++) {
-	<spring:message code="label.firstname" />
-}
-</script>
-</div>
-	<h3>Contacts</h3>
-	<c:if test="${!empty contactList}">
-		<table class="data">
-			<tr>
-				<th>Name</th>
-				<th>Email</th>
-				<th>Telephone</th>
-				<th>&nbsp;</th>
-			</tr>
-			<c:forEach items="${contactList}" var="contact">
+	<div class="contacts">
+		<h3>Contacts</h3>
+		<c:if test="${!empty contactList}">
+			<table class="data">
 				<tr>
-					<td>${contact.lastname}, ${contact.firstname}</td>
-					<td>${contact.email}</td>
-					<td>${contact.telephone}</td>
-					<td>${contact.age}</td>
-					<td>${contact.birthDate}</td>
-					<td><a href="delete/${contact.id}">delete</a></td>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Telephone</th>
+					<th>&nbsp;</th>
 				</tr>
-			</c:forEach>
-		</table>
-	</c:if>
+				<c:forEach items="${contactList}" var="contact">
+					<tr>
+						<td>${contact.lastname}, ${contact.firstname}</td>
+						<td>${contact.email}</td>
+						<td>${contact.telephone}</td>
+						<td>${contact.age}</td>
+						<td>${contact.birthDate}</td>
+						<td><a href="delete/${contact.id}">delete</a></td>
+					</tr>
+				</c:forEach>
+			</table>
+		</c:if>
+	</div>
 </body>
 </html>

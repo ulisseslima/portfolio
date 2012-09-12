@@ -9,3 +9,15 @@ CREATE TABLE Contact
     birthDate	datetime,
     created		TIMESTAMP DEFAULT NOW()
 );
+
+CREATE TABLE Motivation
+(
+    id			INT PRIMARY KEY AUTO_INCREMENT,
+    imageUrl	VARCHAR(255),
+    likes		INT,
+    dislikes	INT,
+    shares		INT,
+    subtitle	VARCHAR(127),
+    title		VARCHAR(127),
+    views		INT
+);
