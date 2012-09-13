@@ -13,7 +13,6 @@ import com.dvlcube.yamg.service.MotivationalResponse;
 import com.dvlcube.yamg.service.MotivationalService;
 
 /**
- * 
  * @author wonka
  * @since 10/09/2012
  */
@@ -53,7 +52,7 @@ public class MotivationalServlet {
 
 	@RequestMapping("/")
 	public String index(final Map<String, Object> map) {
-		List<Motivation> list = service.list();
+		final List<Motivation> list = service.list();
 		map.put("motivations", list);
 		return "yamg/yamg_index";
 	}
