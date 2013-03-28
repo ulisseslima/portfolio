@@ -1,8 +1,10 @@
-package com.dvlcube.yamg.bean;
+package com.dvlcube.motivation.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
+import com.dvlcube.reflection.FieldName;
 
 /**
  * 
@@ -10,7 +12,13 @@ import javax.persistence.Id;
  * @since 10/09/2012
  */
 @Entity
-public class Motivation implements Identifiable<Long> {
+public class Motivation implements Identifiable {
+	public enum Field implements FieldName {
+		dislikes, id, imageUrl, likes, shares, subtitle, title, views
+	}
+
+	private static final long serialVersionUID = -8908958239448876341L;
+
 	private long dislikes;
 
 	@Id

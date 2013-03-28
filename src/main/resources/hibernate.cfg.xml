@@ -6,7 +6,7 @@
 <hibernate-configuration>
 	<session-factory>
 		<mapping class="com.dvlcube.bean.Contact" />
-		<mapping class="com.dvlcube.yamg.bean.Motivation" />
+		<mapping class="com.dvlcube.motivation.bean.Motivation" />
 	</session-factory>
 
 </hibernate-configuration>

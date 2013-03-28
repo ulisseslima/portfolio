@@ -1,23 +1,74 @@
 package com.dvlcube.dao;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
+ * 
  * @author wonka
- * @since 11/08/2012
+ * @since 15/09/2012
  */
 public interface CRUD<E> {
-	void create(E entity);
+	/**
+	 * @param entity
+	 * @return
+	 * @author wonka
+	 * @since 15/09/2012
+	 */
+	Serializable create(E entity);
 
-	boolean delete(Class<E> entity, long id);
-
+	/**
+	 * @param entity
+	 * @author wonka
+	 * @since 13/09/2012
+	 */
 	void delete(E entity);
 
-	List<E> list(Class<E> entity);
+	/**
+	 * @param id
+	 * @return
+	 * @author wonka
+	 * @since 15/09/2012
+	 */
+	void delete(long id);
 
-	E retrieve(Class<E> entity, long id);
+	/**
+	 * @return
+	 * @author wonka
+	 * @since 15/09/2012
+	 */
+	List<E> list();
 
-	boolean update(Class<E> entity, long id);
+	/**
+	 * @param start
+	 * @param maxResults
+	 * @return
+	 * @author wonka
+	 * @since 15/09/2012
+	 */
+	List<E> list(Integer start, Integer maxResults);
 
-	void update(E entity);
+	/**
+	 * @param id
+	 * @return
+	 * @author wonka
+	 * @since 15/09/2012
+	 */
+	E retrieve(long id);
+
+	/**
+	 * @param entity
+	 * @return
+	 * @author wonka
+	 * @since 15/09/2012
+	 */
+	E update(E entity);
+
+	/**
+	 * @param id
+	 * @return
+	 * @author wonka
+	 * @since 15/09/2012
+	 */
+	E update(long id);
 }

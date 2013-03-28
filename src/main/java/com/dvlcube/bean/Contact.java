@@ -9,9 +9,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
+import com.dvlcube.motivation.bean.Identifiable;
+
 @Entity
 @Table(name = "contact")
-public class Contact {
+public class Contact implements Identifiable {
+	private static final long serialVersionUID = -9039959000104998903L;
+
 	@Column(name = "age")
 	private Integer age;
 
@@ -67,8 +71,14 @@ public class Contact {
 	/**
 	 * @return the id
 	 */
+	@Override
 	public Integer getId() {
 		return id;
+	}
+
+	@Override
+	public String getLabel() {
+		return toString();
 	}
 
 	/**

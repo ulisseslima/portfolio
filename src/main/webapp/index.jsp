@@ -1,12 +1,11 @@
-<!doctype html>
-<html>
-<head>
-<title></title>
-</head>
-<body>
-	<h1>Products</h1>
-	<ul>
-		<li><a href="./yamg/">Yet Another Motivational Generator</a></li>
-	</ul>
-</body>
-</html>
+<%@taglib prefix="dvl" tagdir="/WEB-INF/tags" %>
+
+<dvl:page title="Home">
+	<dvl:body subtitle="Generators">		
+		<ul>
+			<li><a href="./motivation/">Yet Another Motivational Generator</a></li>
+			<li><a href="./motivation/">iMessage Generator</a></li>
+			<li><a href="./motivation/">Available WiFi Generator</a></li>
+		</ul>
+	</dvl:body>
+</dvl:page>
